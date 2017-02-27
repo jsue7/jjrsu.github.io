@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<style>
+    	body { margin:0; padding:0; }
+    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:1000px; height:800px;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.466, -80.53], 15);
+
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+
+	L.marker([43.466, -80.53]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+		
+	L.marker([43.468261, -80.543407]).addTo(mymap)
+		.bindPopup("<b>Environment 3 (EV3)</b>").openPopup();
+		
+	L.marker([43.471929, -80.537788]).addTo(mymap)
+		.bindPopup("<b>University Plaza</b>").openPopup();
+		
+	L.marker([43.470582, -80.543422]).addTo(mymap)
+		.bindPopup("<b>Science Teaching Complex (STC)</b>").openPopup();
+		
+	L.marker([43.476341, -80.525267]).addTo(mymap)
+		.bindPopup("<b>Starbucks</b>").openPopup();
+	
+</script>
+
+
+
+</body>
+</html>
